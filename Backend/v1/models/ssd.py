@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 """Hocus Pocus SSD Class
 
-The GPU class is used to identify any kind of SSD.
+The SSD class is used to identify any kind of SSD.
 This item can be used in either Desktop or Laptops.
 Ensure the platform aligns with the type of ram to
 prevent confusion in listing location. Below you 
 can find the unique attributes of the SSD class defined.
 
-Brand - String, The brand that makes the RAM
+Brand - String, The brand that makes the SSD
 Connection - String, The connection type, ie "SATA", "M.2", etc...
 Capacity - Int, The size of the Solid State Drive in GB
 """
