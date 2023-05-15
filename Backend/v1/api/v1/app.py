@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*-
 """Hocus Pocus API Version 1
 
+This file houses the initial API application starting point.
+It defines the app views, cors, and handles errors such as
+404 not found, adn the app teardown.
+
+This file should not house any routes outside or error handling.
+All routes should be defined within the the app views.
 """
 
 # Standard library imports
