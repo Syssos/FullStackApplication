@@ -50,7 +50,25 @@ async function DeleteCache() {
     })
 }
 
+// async function DeleteAllCaches() {
+
+// }
+
 async function pocusSearch(url, term) {
+    // Checks if cache is present for site, if not it makes a get/options request to source for json data
+    return caches.open(term).then((cache) => { 
+        return cache.match(url).then(settings => {
+            if (!settings) {
+                return doSearch(url, term);
+            } else if (settings) {
+                return settings.json().then(data => {return data})
+            }
+            return []
+        });
+    });
+}
+
+async function doSearch(url, term) {
     const searchCache = await caches.open(term);
     const options = {
         method: "GET",
@@ -58,19 +76,20 @@ async function pocusSearch(url, term) {
             'Content-Type': 'application/json'
         }),
     }
-    searchCache.add(new Request(url, options));
-
-    return caches.open(term).then(cache => {
-        return cache.match(url).then(settings => {
-            if (settings) {
-                return settings.json().then(data => {
-                    return data
-                })
-            } else {
-                // cache not found clause
-            }
+    return searchCache.add(new Request(url, options)).then(() => {
+        return caches.open(term).then(cache => {
+            return cache.match(url).then(settings => {
+                if (settings) {
+                    return settings.json().then(data => {
+                        return data
+                    })
+                } else {
+                    console.log("cache not found")
+                    // cache not found clause
+                }
+            })
         })
-    })
+    });    
 }
 
 async function Search(form) {
@@ -78,9 +97,9 @@ async function Search(form) {
     location.assign(`http://localhost:5001/browse?search=${inputValue}`)
 }
 
-function doSearch(event) {
-    console.log(event);
-    if (event.code == "Enter") {
-        // Search(form)
-    }
-}
+// function doSearch(event) {
+//     console.log(event);
+//     if (event.code == "Enter") {
+//         // Search(form)
+//     }
+// }
