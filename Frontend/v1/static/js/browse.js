@@ -1,6 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const product = urlParams.get('platform');
 const sub = urlParams.get('sub');
+const search = urlParams.get('search');
 
 if ('caches' in window){    
     caches.open(HOCUS_CACHE).then(cache => {
@@ -60,6 +61,23 @@ if ('caches' in window){
                                                                                         </div>`
                             }
                         }
+                    } else if (!sub && !product && search) {
+                        document.getElementById("Category").innerHTML = search;
+                        document.getElementById("Category").href = `/browse?search=${search}`;
+                        document.getElementById("Subcategory").style.display = 'none';
+                        var data = pocusSearch(`http://localhost:5000/api/v1/search/${search}`, search);
+                        data.then(x => {
+                            for (const thing of x) {
+                                document.getElementById("product-list").innerHTML += `<div class=\"product-list-item\">\
+                                                                                            <div class=\"product-item-image\"><a href=\"/view?item=${thing.SKU}\"><img src="${thing.ProductImage}" width="100%" height="100%" /></a></div>\
+                                                                                            <div class=\"product-details\">\
+                                                                                                <div class=\"product-detail-title\"><a href=\"/view?item=${thing.SKU}\">${thing.ProductName}</a></div>\
+                                                                                                <div class=\"product-detail-price\"><a href=\"/view?item=${thing.SKU}\">$${thing.Price}</a></div>\
+                                                                                                <div class=\"product-detail-description\">${thing.ProductDescription}</div>\
+                                                                                            </div>\
+                                                                                        </div>`
+                            }
+                        });                        
                     }
                 });
             } else {

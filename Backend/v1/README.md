@@ -1,1 +1,10 @@
 # Full Stack Application - Backend - Version 1
+This version is intended on being a starting point for a project. This means that it is not intended to account for more then our core needs (consider things such as security, speed, programming paradigms, etc... as non essential topics). It should cover logic needed in all areas, including password hashing, searching for data, validating requests, etc..., but does not need to be fine tuned for a production enviornemt. This version is intended to represent a project in its "development" phase. The next version will highlight how issues can be addressed and eliminated from the project, while this version will focus on the core logic at hand with making the application "tick".
+
+## Quick Note About SQLAlchemy
+Through out this version of the backend you may see some things are tailored towards the use of the sqlalchemy library. This is because databases are eventually planned to be utilized by the project. The reason they are present is to better highlight the intended type of each class attribute. This should normally be accounted for VIA environment variables, however in rare cases they will need to be explicity defined to prevent errors from occuring.
+
+The use of them should not impact how each class is utilized outside of SQLAlchemy, showcasing one of the benifits to using the library, and allows for us to highlight the benifits to an objected oriented approach given the languages in use. With minor tailering to how the attributes are defined, sqlalchemy can be removed from the project without impacting any programming paradigms or models.
+
+## Programming Paradigm, OOP Approach
+In this version of the backend there is a strong focus on the Object Oriented Programming (OOP) approach. This is primarily due to heaby reliance of both Javascript and Python. These languages have the same 3 common programming paradigms, Object Oriented, Procedural, and Functional. However the Object Oriented approach tends to be the most popular approach when using these langauges in an anything but basic manor.

@@ -259,5 +259,31 @@
         "Brand": "Western Digital",
         "Connection" : "M.2",
         "Capacity": 1000
+    },
+    "User.e9036e3e-6697-4e92-b3d1-0b1ff26be805": {
+        "__class__":"User",
+        "id":"e9036e3e-6697-4e92-b3d1-0b1ff26be805",
+        "created_at": "2023-05-15T21:08:06.266803",
+        "updated_at": "2023-05-15T21:08:06.266815",
+        "Username": "Syssos",
+        "Password": "plaintextftw",
+        "Email": "totallymyemail@email.com"
+    },
+    "User.f558fce6-e02c-4e6c-93c8-401f8204da59": {
+        "__class__":"User",
+        "id":"f558fce6-e02c-4e6c-93c8-401f8204da59",
+        "created_at": "2023-05-15T21:08:08.266803",
+        "updated_at": "2023-05-15T21:08:08.266815",
+        "Username": "TestAccount",
+        "Password": "plaintextftw",
+        "Email": "totallymyemail@email.com"
+    },
+    "Cart.903fc68a-e663-468c-9162-7dc570d9f613": {
+        "__class__":"Cart",
+        "id":"903fc68a-e663-468c-9162-7dc570d9f613",
+        "created_at": "2023-05-15T21:08:08.266803",
+        "updated_at": "2023-05-15T21:08:08.266815",
+        "User": "TestAccount",
+        "Items": ["AV522HEL", "AV126UYR"]
     }
 }

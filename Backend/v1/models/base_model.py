@@ -35,6 +35,7 @@ from sqlalchemy import Column, String, Integer, DateTime
 Base = declarative_base()
 
 class BaseModel:
+    # Attribute deffinition is required for future database use, check this backends README.md for more details
     SKU = Column(String(60), nullable=False, primary_key=True)
     ProductName = Column(String(60))
     ProductImage = Column(String(160))

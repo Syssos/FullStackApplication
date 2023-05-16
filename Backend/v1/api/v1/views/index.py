@@ -44,7 +44,9 @@ def return_stats():
                 'motherboards': storage.count('Motherboard'),
                 'memory': storage.count('Ram'),
                 'psus': storage.count('PSU'),
-                'ssds': storage.count('SSD')
+                'ssds': storage.count('SSD'),
+                'users': storage.count('User'),
+                'shoppingcarts': storage.count('Cart')
 
         }
         return jsonify(stats)
@@ -55,7 +57,9 @@ def return_itemdata():
         '''
         data = []
         for key, value in storage.all().items():
-                data.append(value.to_dict())
+                # print(value.to_dict()["__class__"])
+                if value.to_dict()["__class__"] != "User" and value.to_dict()["__class__"] != "Cart":
+                        data.append(value.to_dict())
         
         return jsonify(data)
         
@@ -66,7 +70,8 @@ def return_featuredItems():
         '''
         data = []
         for key, value in storage.all().items():
-                data.append(value.to_dict())
+                if value.to_dict()["__class__"] != "User" and value.to_dict()["__class__"] != "Cart":
+                        data.append(value.to_dict())
         
         featured = []
         for x in range(3):
@@ -82,3 +87,16 @@ def return_itemstat(sku_id):
                 if value.SKU == sku_id:
                         return jsonify(value.to_dict())
         return jsonify({"Error": "No Item Found"})
+
+@app_views.route('/search/<querystr>', methods=['GET'], strict_slashes=False)
+def return_search(querystr):
+        ''' Returns specific objects data based off "querystr" being present in any atribute with the type string
+        '''
+        relevantData = []
+        for key, value in storage.all().items():
+                tmp = value.to_dict()
+                if tmp["__class__"] != "User" and tmp["__class__"] != "Cart":
+                        for k, v in tmp.items():
+                                if isinstance(v, str) and querystr in v and tmp not in relevantData:
+                                        relevantData.append(tmp)
+        return jsonify(relevantData)

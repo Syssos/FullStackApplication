@@ -29,7 +29,7 @@ from sqlalchemy import Column, String, Integer
 from models.base_model import BaseModel, Base
 
 class Motherboard(BaseModel, Base):
-    # For use with SQLalchemy, database table tied to class
+    # For use with SQLalchemy, database table tied to class, can be ingored with current version of backend
     __tablename__ = "motherboards"
     
     if getenv("STORAGE_TYPE") == "db":

@@ -49,3 +49,38 @@ async function DeleteCache() {
         console.log('Cache successfully deleted!');
     })
 }
+
+async function pocusSearch(url, term) {
+    const searchCache = await caches.open(term);
+    const options = {
+        method: "GET",
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        }),
+    }
+    searchCache.add(new Request(url, options));
+
+    return caches.open(term).then(cache => {
+        return cache.match(url).then(settings => {
+            if (settings) {
+                return settings.json().then(data => {
+                    return data
+                })
+            } else {
+                // cache not found clause
+            }
+        })
+    })
+}
+
+async function Search(form) {
+    var inputValue = form.inputBox.value;
+    location.assign(`http://localhost:5001/browse?search=${inputValue}`)
+}
+
+function doSearch(event) {
+    console.log(event);
+    if (event.code == "Enter") {
+        // Search(form)
+    }
+}

@@ -45,9 +45,9 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" name="inputBox" placeholder="Search" aria-label="Search" onkeydown="return event.key != 'Enter';">
+                        <button class="btn btn-outline-success" type="button" onclick="Search(this.form)">Search</button>
                     </form>
                 </div>
             </div>
@@ -75,7 +75,9 @@
                 </div>
             </div>
 
-            
+            <div class="item-container" id="item-container">
+                <!-- Auto Generated -->
+            </div>
 
           </section>
 

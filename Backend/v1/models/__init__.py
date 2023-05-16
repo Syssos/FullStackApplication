@@ -28,11 +28,13 @@ from models.monitors import Monitor
 from models.motherboard import Motherboard
 from models.psu import PSU
 from models.ssd import SSD
+from models.user import User
+from models.cart import Cart
 
 storage = file_storage.FileStorage()
 
 classes = {"Ram": Ram, "Cable": Cable, "Motherboard": Motherboard, 
            "Case": Case, "CPU": CPU, "GPU": GPU, "Monitor": Monitor, 
-           "PSU": PSU, "SSD": SSD}
+           "PSU": PSU, "SSD": SSD, "User": User, "Cart": Cart}
 
 storage.reload()

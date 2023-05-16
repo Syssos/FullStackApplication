@@ -58,6 +58,24 @@ class FileStorage:
         '''
         self.reload()
 
+    def save(self):
+        '''
+            Here for future use, This function does not commit changes.
+
+            Should commit any changes within __objects into file located 
+            at __file_path.
+        '''
+        self.reload()
+
+    def delete(self):
+        '''
+            Here for future use, This function does not commit changes.
+
+            Should delete object, then commit changes within in file located 
+            at __file_path.
+        '''
+        self.reload()
+
     def all(self, cls=None):
         '''
             Return ex 
