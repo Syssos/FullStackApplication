@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/gpus')
 def return_gpus():
-    ''' Returns jsonified array of all GPU class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all GPU class instances found in "storage" object
+    """
     GPUList = []
     GPUInfo = storage.all('GPU')
     for key, value in GPUInfo.items():
@@ -32,8 +32,8 @@ def return_gpus():
 
 @app_views.route('/gpus/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_gpus(sku_id):
-    ''' Returns jsonified dicitionary of GPU class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of GPU class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('GPU', sku_id) is None:
         abort(404)
     vari = storage.get('GPU', sku_id)

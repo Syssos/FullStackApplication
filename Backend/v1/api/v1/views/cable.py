@@ -21,8 +21,8 @@ from api.v1.views import app_views
 
 @app_views.route('/cables')
 def return_cables():
-    ''' Returns jsonified array of all cable class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all cable class instances found in "storage" object
+    """
     CableList = []
     CableInfo = storage.all('Cable')
     for key, value in CableInfo.items():
@@ -32,8 +32,8 @@ def return_cables():
 
 @app_views.route('/cables/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_cable(sku_id):
-    ''' Returns jsonified dicitionary of cable class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of cable class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('Cable', sku_id) is None:
         abort(404)
     vari = storage.get('Cable', sku_id)

@@ -1,4 +1,7 @@
-async function LoadCarasel() {
+/**
+* Loads data into carousel found on homepage
+*/
+async function LoadCarousel() {
     var data = fetch("http://localhost:5000/api/v1/items/featured").then(x => {return x.text()});
     var count = 1
     data.then(featuredItems => {
@@ -16,4 +19,4 @@ async function LoadCarasel() {
     });
 }
 
-LoadCarasel();
+LoadCarousel();

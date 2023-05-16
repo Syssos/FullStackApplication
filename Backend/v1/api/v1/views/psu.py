@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/psus')
 def return_psus():
-    ''' Returns jsonified array of all PSU class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all PSU class instances found in "storage" object
+    """
     PSUList = []
     PSUInfo = storage.all('PSU')
     for key, value in PSUInfo.items():
@@ -32,8 +32,8 @@ def return_psus():
 
 @app_views.route('/psus/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_psus(sku_id):
-    ''' Returns jsonified dicitionary of PSU class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of PSU class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('PSU', sku_id) is None:
         abort(404)
     vari = storage.get('PSU', sku_id)

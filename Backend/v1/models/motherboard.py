@@ -55,8 +55,7 @@ class Motherboard(BaseModel, Base):
         NVMeSLOTS = 0
 
     def ConnectionList(self):
-        '''
-            Returns an array of strings, each string is a type of video connection, ie "VGA"
-        '''
+        """ Returns an array of strings, each string is a type of video connection, ie "VGA"
+        """
         data = self.VideoOut.split(',')
         return data

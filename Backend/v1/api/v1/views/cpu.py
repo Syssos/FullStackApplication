@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/cpus')
 def return_cpus():
-    ''' Returns jsonified array of all CPU class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all CPU class instances found in "storage" object
+    """
     CPUList = []
     CPUInfo = storage.all('CPU')
     for key, value in CPUInfo.items():
@@ -32,8 +32,8 @@ def return_cpus():
 
 @app_views.route('/cpus/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_cpus(sku_id):
-    ''' Returns jsonified dicitionary of CPU class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of CPU class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('CPU', sku_id) is None:
         abort(404)
     vari = storage.get('CPU', sku_id)

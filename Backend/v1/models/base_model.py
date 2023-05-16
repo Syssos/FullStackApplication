@@ -96,28 +96,25 @@ class BaseModel:
                     setattr(self, key, val)
 
     def __str__(self):
-        '''
-            Return: ex. [Ram] (AVAAAAAA) {atr: data, atr: data, atr: data, ...}
+        """ Return: ex. [Ram] (AVAAAAAA) {atr: data, atr: data, atr: data, ...}
             The isolated data at the begining of the string is cnsidered to be of the most value. 
             The SKU is a unique Identifier and the class will identify the type of product
-        '''
+        """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.SKU, self.__dict__))
 
     def __repr__(self):
-        '''
-            Return: ex. [Ram] (AVAAAAAA) {atr: data, atr: data, atr: data, ...}
+        """ Return: ex. [Ram] (AVAAAAAA) {atr: data, atr: data, atr: data, ...}
             The isolated data at the begining of the string is cnsidered to be of the most value. 
             The SKU is a unique Identifier and the class will identify the type of product
-        '''
+        """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.SKU, self.__dict__))
 
     def to_dict(self):
-        '''
-            Returns dictionary representation of BaseModel or class inheriting the BaseModel class.
+        """ Returns dictionary representation of BaseModel or class inheriting the BaseModel class.
             _sa_instance_state is removed from the dictionary if the attribute is present.
-        '''
+        """
         cp_dct = dict(self.__dict__)
         cp_dct['__class__'] = self.__class__.__name__
         if hasattr(self, "_sa_instance_state"):

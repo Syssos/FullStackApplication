@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/monitors')
 def return_monitors():
-    ''' Returns jsonified array of all Monitor class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all Monitor class instances found in "storage" object
+    """
     MonitorList = []
     MonitorInfo = storage.all('Monitor')
     for key, value in MonitorInfo.items():
@@ -32,8 +32,8 @@ def return_monitors():
 
 @app_views.route('/monitors/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_monitors(sku_id):
-    ''' Returns jsonified dicitionary of Monitor class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of Monitor class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('Monitor', sku_id) is None:
         abort(404)
     vari = storage.get('Monitor', sku_id)

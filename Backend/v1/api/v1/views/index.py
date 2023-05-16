@@ -27,14 +27,14 @@ from models import Motherboard
 
 @app_views.route('/status')
 def return_status():
-        ''' Returns jsonified dictianary containing the api status
-        '''
+        """ Returns jsonified dictianary containing the api status
+        """
         return jsonify({"status": "OK"})
 
 @app_views.route('/stats', strict_slashes=False)
 def return_stats():
-        ''' Returns jsonified dictianary containing the amount of each item based on the amount of class instances.
-        '''
+        """ Returns jsonified dictianary containing the amount of each item based on the amount of class instances.
+        """
         stats = {
                 'cables': storage.count('Cable'),
                 'cases': storage.count('Case'),
@@ -53,8 +53,8 @@ def return_stats():
 
 @app_views.route('/items', strict_slashes=False)
 def return_itemdata():
-        ''' Returns jsonified array of each item pulled from storage object
-        '''
+        """ Returns jsonified array of each item pulled from storage object
+        """
         data = []
         for key, value in storage.all().items():
                 # print(value.to_dict()["__class__"])
@@ -66,8 +66,8 @@ def return_itemdata():
 
 @app_views.route('/items/featured', strict_slashes=False)
 def return_featuredItems():
-        ''' Returns jsonified array of 3 random objects contained within the storage object
-        '''
+        """ Returns jsonified array of 3 random objects contained within the storage object
+        """
         data = []
         for key, value in storage.all().items():
                 if value.to_dict()["__class__"] != "User" and value.to_dict()["__class__"] != "Cart":
@@ -81,8 +81,8 @@ def return_featuredItems():
 
 @app_views.route('/items/<sku_id>', methods=['GET'], strict_slashes=False)
 def return_itemstat(sku_id):
-        ''' Returns specific objects data based off "sku_id"
-        '''
+        """ Returns specific objects data based off "sku_id"
+        """
         for key, value in storage.all().items():
                 if value.SKU == sku_id:
                         return jsonify(value.to_dict())
@@ -90,8 +90,8 @@ def return_itemstat(sku_id):
 
 @app_views.route('/search/<querystr>', methods=['GET'], strict_slashes=False)
 def return_search(querystr):
-        ''' Returns specific objects data based off "querystr" being present in any atribute with the type string
-        '''
+        """ Returns specific objects data based off "querystr" being present in any atribute with the type string
+        """
         relevantData = []
         for key, value in storage.all().items():
                 tmp = value.to_dict()

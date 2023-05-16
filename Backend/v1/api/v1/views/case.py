@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/cases')
 def return_cases():
-    ''' Returns jsonified array of all case class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all case class instances found in "storage" object
+    """
     CaseList = []
     CaseInfo = storage.all('Case')
     for key, value in CaseInfo.items():
@@ -32,8 +32,8 @@ def return_cases():
 
 @app_views.route('/cases/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_cases(sku_id):
-    ''' Returns jsonified dicitionary of case class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of case class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('Case', sku_id) is None:
         abort(404)
     vari = storage.get('Case', sku_id)

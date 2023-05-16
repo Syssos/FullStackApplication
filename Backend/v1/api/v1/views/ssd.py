@@ -21,8 +21,8 @@ from models import storage
 
 @app_views.route('/ssds')
 def return_ssds():
-    ''' Returns jsonified array of all SSD class instances found in "storage" object
-    '''
+    """ Returns jsonified array of all SSD class instances found in "storage" object
+    """
     SSDList = []
     SSDInfo = storage.all('SSD')
     for key, value in SSDInfo.items():
@@ -32,8 +32,8 @@ def return_ssds():
 
 @app_views.route('/ssds/<sku_id>', methods=['GET'], strict_slashes=False)
 def get_ssds(sku_id):
-    ''' Returns jsonified dicitionary of SSD class instances found in "storage" object with SKU matching "sku_id"
-    '''
+    """ Returns jsonified dicitionary of SSD class instances found in "storage" object with SKU matching "sku_id"
+    """
     if storage.get('SSD', sku_id) is None:
         abort(404)
     vari = storage.get('SSD', sku_id)

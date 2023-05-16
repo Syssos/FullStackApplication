@@ -38,8 +38,8 @@ class UserBase:
     updated_at = Column(DateTime, default=datetime.utcnow(), nullable=False)
 
     def __init__(self, *args, **kwargs):
-        ''' Initialize public instance, assigns attributes and sets created_at time.
-        '''
+        """ Initialize public instance, assigns attributes and sets created_at time.
+        """
         if (len(kwargs) == 0):
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -62,27 +62,27 @@ class UserBase:
                 self.id = str(uuid.uuid4())
 
     def __str__(self):
-        ''' Return string representation of UserBase class
-        '''
+        """ Return string representation of UserBase class
+        """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.ID, self.__dict__))
 
     def __repr__(self):
-        ''' Return string representation of UserBase class
-        '''
+        """ Return string representation of UserBase class
+        """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.ID, self.__dict__))
 
     def save(self):
-        ''' Updates the updated_at attribute with new datetime, then commits changes to file storage.
-        '''
+        """ Updates the updated_at attribute with new datetime, then commits changes to file storage.
+        """
         self.updated_at = datetime.now()
         models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
-        ''' Return dictionary representation of User class.
-        '''
+        """ Return dictionary representation of User class.
+        """
         cp_dct = dict(self.__dict__)
         cp_dct['__class__'] = self.__class__.__name__
         cp_dct['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
@@ -94,6 +94,6 @@ class UserBase:
         #     cp_dct.pop("password", None)
 
     def delete(self):
-        ''' Deletes an object from
-        '''
+        """ Deletes an object from
+        """
         models.storage.delete(self)

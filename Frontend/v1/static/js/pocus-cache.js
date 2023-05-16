@@ -1,11 +1,12 @@
-const HOCUS_CACHE = 'hocus-pocus';
-const HOCUS_API = 'http://localhost:5000/api/v1/items';
+const HOCUS_CACHE = 'hocus-pocus'; // cache name to use for site data
+const HOCUS_API = 'http://localhost:5000/api/v1/items'; // link holding response of data being cached
 
 if ('caches' in window){
     checkCache();
     // DeleteCache();
 }
 
+// Utilized for converting class names into usable text through out the site.
 const pretifyThis = {
     Desktop : "Desktop",
     Laptop: "Laptop's",
@@ -21,8 +22,10 @@ const pretifyThis = {
     SSD : "Solid State Drive's"
 }
 
+/**
+* Checks if user has site data cached, if not, caches needed site data.
+*/
 async function checkCache() {
-    // Checks if cache is present for site, if not it makes a get/options request to source for json data
     caches.open(HOCUS_CACHE).then((cache) => { 
         cache.keys().then( (arrayOfRequest) => { 
             if (arrayOfRequest.length == 0) {
@@ -32,6 +35,9 @@ async function checkCache() {
     });
 }
 
+/**
+* Fetchs site data and caches it
+*/
 async function CollectCacheData() {
     const newCache = await caches.open(HOCUS_CACHE);
     const options = {
@@ -43,63 +49,48 @@ async function CollectCacheData() {
     newCache.add(new Request(HOCUS_API, options));
 }
 
+/**
+* Deletes current cache
+*/
 async function DeleteCache() {
-    // Deletes cache
     caches.delete(HOCUS_CACHE).then(() => {
         console.log('Cache successfully deleted!');
     })
 }
 
-// async function DeleteAllCaches() {
-
-// }
-
-async function pocusSearch(url, term) {
-    // Checks if cache is present for site, if not it makes a get/options request to source for json data
-    return caches.open(term).then((cache) => { 
-        return cache.match(url).then(settings => {
-            if (!settings) {
-                return doSearch(url, term);
-            } else if (settings) {
-                return settings.json().then(data => {return data})
-            }
-            return []
-        });
-    });
-}
-
-async function doSearch(url, term) {
-    const searchCache = await caches.open(term);
-    const options = {
-        method: "GET",
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        }),
-    }
-    return searchCache.add(new Request(url, options)).then(() => {
-        return caches.open(term).then(cache => {
-            return cache.match(url).then(settings => {
-                if (settings) {
-                    return settings.json().then(data => {
-                        return data
-                    })
-                } else {
-                    console.log("cache not found")
-                    // cache not found clause
-                }
-            })
-        })
-    });    
-}
-
+/**
+* Used for redirecting traffic based on input from the search form
+* @param {object} form - The HTML form element that calls the function
+*/
 async function Search(form) {
     var inputValue = form.inputBox.value;
     location.assign(`http://localhost:5001/browse?search=${inputValue}`)
 }
 
-// function doSearch(event) {
-//     console.log(event);
-//     if (event.code == "Enter") {
-//         // Search(form)
-//     }
-// }
+/**
+* Searches for "querystr" within cached data
+* @param {string} querystr - The string being searched for
+*/
+async function searchCache(querystr) {
+    newCacheList = []
+    return caches.open(HOCUS_CACHE).then(cache => {
+        return cache.match(HOCUS_API).then(data => {
+            if (data) {
+                return data.json().then(cacheData => {
+                    for (const item of cacheData) {
+                        for (const property in item) {
+                            if (typeof(item[property]) == "string" && item[property].toLowerCase().includes(querystr.toLowerCase()) && !newCacheList.includes(item)) {
+                                newCacheList.push(item)
+                            }
+                        }
+                    }
+                    return newCacheList
+                })
+            } else {
+                // cache not loaded clause
+                CollectCacheData()
+                return searchCache(querystr)
+            }
+        })
+    })
+}
