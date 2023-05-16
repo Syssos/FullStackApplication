@@ -45,16 +45,53 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" name="inputBox" placeholder="Search" aria-label="Search" onkeydown="return event.key != 'Enter';">
-                        <button class="btn btn-outline-success" type="button" onclick="Search(this.form)">Search</button>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" name="inputBox" placeholder="Search" aria-label="Search" onkeydown="return event.key != 'Enter';">
+                      <button class="btn btn-outline-success" type="button" onclick="Search(this.form)">Search</button>
                     </form>
+                    <div class="search-buffer-space"></div>
+                    <!-- <div class="text-end">
+                        <button type="button" class="btn btn-outline-light me-2">Login</button>
+                        <button type="button" class="btn btn-warning">Sign-up</button>
+                    </div> -->
+                    <div class="dropdown text-end">
+                      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end text-small">
+                        <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button">Cart</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                      </ul>
+                    </div>
                 </div>
             </div>
           </nav>
 
-          <section class="content">
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div>
+                View, Modify, or Remove shopping cart items
+              </div>
+              <!-- <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
 
+          <section class="content">
             <div class="breadcrumb-container">
                 <div class="container my-5">
                     <nav aria-label="breadcrumb">
