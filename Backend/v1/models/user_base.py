@@ -65,13 +65,13 @@ class UserBase:
         """ Return string representation of UserBase class
         """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.ID, self.__dict__))
+                                      self.id, self.__dict__))
 
     def __repr__(self):
         """ Return string representation of UserBase class
         """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.ID, self.__dict__))
+                                      self.id, self.__dict__))
 
     def save(self):
         """ Updates the updated_at attribute with new datetime, then commits changes to file storage.

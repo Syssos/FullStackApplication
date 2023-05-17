@@ -267,7 +267,8 @@
         "updated_at": "2023-05-15T21:08:06.266815",
         "Username": "Syssos",
         "Password": "plaintextftw",
-        "Email": "totallymyemail@email.com"
+        "Email": "totallymyemail@email.com",
+        "Cart": "903fc68a-e663-468c-9162-7dc570d9f613"
     },
     "User.f558fce6-e02c-4e6c-93c8-401f8204da59": {
         "__class__":"User",
@@ -276,7 +277,8 @@
         "updated_at": "2023-05-15T21:08:08.266815",
         "Username": "TestAccount",
         "Password": "plaintextftw",
-        "Email": "totallymyemail@email.com"
+        "Email": "totallymyemail@email.com",
+        "Cart": ""
     },
     "Cart.903fc68a-e663-468c-9162-7dc570d9f613": {
         "__class__":"Cart",

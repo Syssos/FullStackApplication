@@ -1,5 +1,7 @@
+const HOCUS_CART = 'hocus-cart'; // cache name for cart object
 const HOCUS_CACHE = 'hocus-pocus'; // cache name to use for site data
 const HOCUS_API = 'http://localhost:5000/api/v1/items'; // link holding response of data being cached
+const CART_API = 'http://localhost:5000/api/v1/cart'; // link holding response of data being cached
 
 if ('caches' in window){
     checkCache();
@@ -94,4 +96,18 @@ async function searchCache(querystr) {
             }
         })
     })
+}
+
+/**
+* Fetchs cart data and caches it, requires authetication cookie
+*/
+async function collectCartData() {
+    const newCache = await caches.open(HOCUS_CART);
+    const options = {
+        method: "GET",
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }
+    newCache.add(new Request(CART_API, options));
 }

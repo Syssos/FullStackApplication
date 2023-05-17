@@ -28,3 +28,4 @@ from api.v1.views.monitor import *
 from api.v1.views.motherboard import *
 from api.v1.views.psu import *
 from api.v1.views.ssd import *
+from api.v1.views.authenticated import *

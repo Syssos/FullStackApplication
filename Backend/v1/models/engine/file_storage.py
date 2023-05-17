@@ -31,12 +31,11 @@ class FileStorage:
     __objects = {}
 
     def reload(self):
-        '''
-            Return: None
+        """ Return: None
             This function will load the data from __file_path into the __objects data,
             effectively pulling in any new changes on the data in the file. Useful after
             saving data to file, or initially loading data when the programs first started.
-        '''
+        """
 
         try:
             with open(FileStorage.__file_path, encoding="UTF8") as fd:
@@ -49,36 +48,32 @@ class FileStorage:
             pass
 
     def close(self):
-        '''
-            Here for future use, This function does not commit changes.
+        """ Here for future use, This function does not commit changes.
 
             Should commit any changes within __objects into file located 
             at __file_path and close fd, check to see if fd can be closed 
             later, simular to defer statement in Go?
-        '''
+        """
         self.reload()
 
     def save(self):
-        '''
-            Here for future use, This function does not commit changes.
+        """ Here for future use, This function does not commit changes.
 
             Should commit any changes within __objects into file located 
             at __file_path.
-        '''
+        """
         self.reload()
 
     def delete(self):
-        '''
-            Here for future use, This function does not commit changes.
+        """ Here for future use, This function does not commit changes.
 
             Should delete object, then commit changes within in file located 
             at __file_path.
-        '''
+        """
         self.reload()
 
     def all(self, cls=None):
-        '''
-            Return ex 
+        """ Return ex 
             {
                 "__class__.__name__.SKU": {atr: "data", atr: "data", ...}, 
                 "Ram.AV9875KJG": {SKU: "AV9875KJG", Speed: 2666, ...},
@@ -86,7 +81,7 @@ class FileStorage:
             }
 
             Returns dictionary of all instances of the scpecified class found within __objects
-        '''
+        """
         new_dict = {}
         if cls is None:
             return self.__objects
@@ -100,18 +95,25 @@ class FileStorage:
             return self.__objects
 
     def get(self, cls, sku_id):
-        ''' 
-            Returns an object with corresponding SKU_id number
-        '''
+        """ Returns an object with corresponding SKU_id number
+        """
         cls_dict = self.all(cls)
         val = "{}.{}".format(str(cls), str(sku_id))
         obj = cls_dict.get(val)
         return obj
 
+    def getBySKU(self, sku):
+        """ Returns an object with specified SKU number, ignores classes that do not utilize a SKU
+        """
+        for key, val in self.__objects.items():
+            if val.__class__ != "User" or val.__class__ != "Cart":
+                if val.SKU == sku:
+                    return val.to_dict()
+        return {}
+
     def count(self, cls=None):
-        '''
-            Returns the number of each instance found for "cls" in self.__object
-        '''
+        """ Returns the number of each instance found for "cls" in self.__object
+        """
         count = 0
         cls_dict = self.all(cls)
         count = len(cls_dict)

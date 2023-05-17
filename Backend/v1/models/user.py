@@ -22,14 +22,16 @@ from os import getenv
 
 # Related third party imports
 from sqlalchemy import Column, String
+from flask_login import UserMixin
 
 # Local application/library specific imports
+import models
 from models.user_base import UserBase, Base
 
-class User(UserBase, Base):
+class User(UserMixin, UserBase, Base):
     # For use with SQLalchemy, database table tied to class, can be ingored with current version of backend
     __tablename__ = "users"
-    
+
     if getenv("STORAGE_TYPE") == "db":
         Username = Column(String(60))
         Password = Column(String(160))
@@ -38,3 +40,11 @@ class User(UserBase, Base):
         Username = ""
         Password = ""
         Email = ""
+
+    def get(self, user_id):
+        """ returns user class instance based on id, utilized in login managers user_loader function
+        """
+        data = models.storage.get("User", user_id)
+        if data:
+            return data
+        return None

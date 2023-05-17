@@ -17,15 +17,26 @@ import os
 from flask import Flask, Blueprint, jsonify
 from flask import Flask
 from flask_cors import CORS
+from flask_login import LoginManager
 
 # Local application/library specific imports
 from api.v1.views import app_views
 from models import storage
+from models.user import User
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
 cors = CORS(app, resources={"/api/v1/*": {"origins": "*"}})
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    """ Loads user object for use with authentication
+    """
+    return User().get(user_id)
 
 @app.teardown_appcontext
 def teardown(self):
