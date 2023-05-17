@@ -16,7 +16,7 @@ if ('caches' in window){
                 });
             } else {
                 // collects cache and reloads
-                CollectCacheData();
+                collectCacheData();
                 location.reload();
                 document.getElementById("product-list").innerHTML = "Loading Cached Data";
             }
@@ -79,7 +79,7 @@ async function updateListing(data) {
 */
 async function updateDisplay(obj) {
     document.getElementById("product-list").innerHTML += `<div class=\"product-list-item\">\
-                                                            <div class=\"product-item-image\"><a href=\"/view?item=${obj.SKU}\"><img src="${obj.ProductImage}" width="100%" height="100%" /></a></div>\
+                                                            <div class=\"product-item-image\"><a href=\"/view?item=${obj.SKU}\"><img src="${obj.ProductImage}" width="90%" height="90%" /></a></div>\
                                                             <div class=\"product-details\">\
                                                                 <div class=\"product-detail-title\"><a href=\"/view?item=${obj.SKU}\">${obj.ProductName}</a></div>\
                                                                 <div class=\"product-detail-price\"><a href=\"/view?item=${obj.SKU}\">$${obj.Price}</a></div>\

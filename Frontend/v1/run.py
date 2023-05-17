@@ -23,14 +23,14 @@ def return_category():
         ''' Returns api status
         '''
 
-        return render_template('category.html')
+        return render_template('browse.html')
 
 @app.route('/view')
 def return_item():
         ''' Returns api status
         '''
 
-        return render_template('item.html')
+        return render_template('view.html')
 
 @app.errorhandler(404)
 def errorhandler(error):

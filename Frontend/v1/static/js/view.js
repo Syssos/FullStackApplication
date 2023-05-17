@@ -51,7 +51,8 @@ async function setBreadcrumbPaths(data){
 
 /**
 * creates a formated HTML string used to display the item on the page
-* @param {object} data - Object holding data to be displayed
+* @param {object} data - Object holding data to be displayed, expected to a standard product object
+* @return {string} - a string of HTML formated with product information
 */
 function createElementView(data) {
     return `<div class="item-image"><img src="${data.ProductImage}" width="60%" height="100%" /></div>

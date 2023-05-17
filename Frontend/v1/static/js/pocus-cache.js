@@ -29,7 +29,7 @@ async function checkCache() {
     caches.open(HOCUS_CACHE).then((cache) => { 
         cache.keys().then( (arrayOfRequest) => { 
             if (arrayOfRequest.length == 0) {
-                CollectCacheData();
+                collectCacheData();
             }
         });
     });
@@ -38,7 +38,7 @@ async function checkCache() {
 /**
 * Fetchs site data and caches it
 */
-async function CollectCacheData() {
+async function collectCacheData() {
     const newCache = await caches.open(HOCUS_CACHE);
     const options = {
         method: "GET",
@@ -70,6 +70,7 @@ async function Search(form) {
 /**
 * Searches for "querystr" within cached data
 * @param {string} querystr - The string being searched for
+* @return {array} - an array of product items, each item containing some kind an instance of querystr
 */
 async function searchCache(querystr) {
     newCacheList = []
@@ -88,7 +89,7 @@ async function searchCache(querystr) {
                 })
             } else {
                 // cache not loaded clause
-                CollectCacheData()
+                collectCacheData()
                 return searchCache(querystr)
             }
         })
