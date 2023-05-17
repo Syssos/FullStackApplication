@@ -51,7 +51,7 @@
 /* browse.js/browse.html creates HTML code that utilizes following styling*/
 .item-container {
     width: 60%;
-    height: 900px;
+    height: 600px;
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: 10% 30% 20% 20% 20%;
@@ -177,4 +177,63 @@
 .product-list-item div > a {
     text-decoration: none;
     color: #333;
+}
+
+/* Login Canvas */
+.login-canvas {
+    width: 500px;
+    height: 400px;
+    opacity: 1;
+    top: 10%;
+    left: 38%;
+    position: fixed;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+.login-menu-container {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-username {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.login-password {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.login-submit {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.pocus-form-title {
+    padding-left: .5rem;
+}
+
+.user-control-menu, .signin-menu {
+    display: none;
 }

@@ -26,7 +26,7 @@ from models.user import User
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
-cors = CORS(app, resources={"/api/v1/*": {"origins": "*"}})
+cors = CORS(app, supports_credentials=True, resources={"/api/v1/*": {"origins": "http://localhost:5001"}})
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 login_manager = LoginManager()

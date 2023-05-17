@@ -26,10 +26,11 @@ def return_auth():
     """
     if request.method == "POST":
         # record the user name
-        user = request.form.get("username")
-        pwd = request.form.get("password")
+        data = request.get_json()
+        print(data)
+        user = data["username"]
+        pwd = data["password"]
         users = models.storage.all("User")
-        # print(users)
         for key, value in users.items():
             if value.Username == user and value.Password == pwd:
                 login_user(value)
@@ -60,3 +61,10 @@ def return_cart():
         newData["Items"].append(models.storage.getBySKU(item))
 
     return jsonify(newData)
+
+@app_views.route('/isauth', methods=['GET'], strict_slashes=False)
+@login_required
+def return_authstatus():
+    """ 
+    """
+    return jsonify("authenticated")
