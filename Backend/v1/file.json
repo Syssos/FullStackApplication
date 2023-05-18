@@ -1,83 +1,76 @@
 {
     "Ram.AV011TQT": {
-        "__class__":"Ram",
-        "SKU":"AV011TQT",
+        "SKU": "AV011TQT",
         "ProductName": "16GB Corsair Vengance ram, full RGB, DDR4",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 14.95,
-        "Amount": 10,
+        "Amount": 0,
         "Platform": "Desktop",
-        
         "Brand": "Corsair",
-        "Model":"Vengance",
+        "Model": "Vengance",
         "Capacity": 16,
-        "Speed": 2666
+        "Speed": 2666,
+        "__class__": "Ram"
     },
     "Ram.AV342HSD": {
-        "__class__":"Ram",
-        "SKU":"AV342HSD",
+        "SKU": "AV342HSD",
         "ProductName": "8GB Crucial DDR4 SoDIMM",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 10.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Laptop",
-
         "Brand": "Crucial",
-        "Model":"",
+        "Model": "",
         "Capacity": 8,
-        "Speed": 2400
+        "Speed": 2400,
+        "__class__": "Ram"
     },
     "Cable.AV908HGS": {
-        "__class__":"Cable",
-        "SKU":"AV908HGS",
+        "SKU": "AV908HGS",
         "ProductName": "4ft HDMI Cable",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 10.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Type": "HDMI",
-        "Length": 4
+        "Length": 4,
+        "__class__": "Cable"
     },
     "Cable.AV847PEH": {
-        "__class__":"Cable",
-        "SKU":"AV847PEH",
+        "SKU": "AV847PEH",
         "ProductName": "4ft HDMI Cable",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 10.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Laptop",
-
         "Type": "HDMI",
-        "Length": 4
+        "Length": 4,
+        "__class__": "Cable"
     },
     "Cable.AV592LIS": {
-        "__class__":"Cable",
-        "SKU":"AV592LIS",
+        "SKU": "AV592LIS",
         "ProductName": "6ft DVI Cable",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 10.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Other",
-
         "Type": "DVI",
-        "Length": 6
+        "Length": 6,
+        "__class__": "Cable"
     },
     "Motherboard.AV098USE": {
-        "__class__":"Motherboard",
-        "SKU":"AV098USE",
+        "SKU": "AV098USE",
         "ProductName": "Gigabyte H510M-H Motherboard",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 109.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Gigabyte",
         "Model": "H510M-H",
         "Socket": "LGA 1200",
@@ -86,18 +79,17 @@
         "RAMSlots": 2,
         "MAXRAMSPEED": 4200,
         "MINRAMSPEED": 2400,
-        "NVMeSLOTS": 1
+        "NVMeSLOTS": 1,
+        "__class__": "Motherboard"
     },
     "Motherboard.AV825PBT": {
-        "__class__":"Motherboard",
-        "SKU":"AV825PBT",
+        "SKU": "AV825PBT",
         "ProductName": "Asus H460M Motherboard, Socket 1151",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 95.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Asus",
         "Model": "H460M",
         "Socket": "LGA 1151",
@@ -106,186 +98,178 @@
         "RAMSlots": 4,
         "MAXRAMSPEED": 4200,
         "MINRAMSPEED": 2400,
-        "NVMeSLOTS": 2
+        "NVMeSLOTS": 2,
+        "__class__": "Motherboard"
     },
     "Case.AV826LUB": {
-        "__class__":"Case",
-        "SKU":"AV826LUB",
+        "SKU": "AV826LUB",
         "ProductName": "Coolermaster Elite 400, Full-ATX",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 49.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Coolermaster",
         "Model": "400",
-        "Size": "Full"
+        "Size": "Full",
+        "__class__": "Case"
     },
     "CPU.AV204BAH": {
-        "__class__":"CPU",
-        "SKU":"AV204BAH",
+        "SKU": "AV204BAH",
         "ProductName": "10th Gen Intel Core i5-10600",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 110.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Intel",
         "Model": "i5-10600",
         "Speed": 3.7,
-        "Cores": 8
+        "Cores": 8,
+        "__class__": "CPU"
     },
     "CPU.AV925PEJ": {
-        "__class__":"CPU",
-        "SKU":"AV925PEJ",
+        "SKU": "AV925PEJ",
         "ProductName": "9th Gen Intel Pentium",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 89.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Intel",
         "Model": "G6400",
         "Speed": 2.9,
-        "Cores": 4
+        "Cores": 4,
+        "__class__": "CPU"
     },
     "GPU.AV675LIY": {
-        "__class__":"GPU",
-        "SKU":"AV675LIY",
+        "SKU": "AV675LIY",
         "ProductName": "Gigabyte RTX 3070 Ti",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 110.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Gigabyte",
-        "Model": "3070 Ti"
+        "Model": "3070 Ti",
+        "__class__": "GPU"
     },
     "GPU.AV092QNY": {
-        "__class__":"GPU",
-        "SKU":"AV092QNY",
+        "SKU": "AV092QNY",
         "ProductName": "Asus RTX 3080 Super",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 89.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Asus",
-        "Model": "3080 Super"
+        "Model": "3080 Super",
+        "__class__": "GPU"
     },
     "Monitor.AV443GGF": {
-        "__class__":"Monitor",
-        "SKU":"AV443GGF",
+        "SKU": "AV443GGF",
         "ProductName": "Asus 26\" Monitor DVI & HDMI Capable",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 110.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-        
         "Brand": "Asus",
         "Ports": "DVI, HDMI",
-        "Size": 26
+        "Size": 26,
+        "__class__": "Monitor"
     },
     "Monitor.AV342LLO": {
-        "__class__":"Monitor",
-        "SKU":"AV342LLO",
+        "SKU": "AV342LLO",
         "ProductName": "Asus 24\" Monitor VGA, DVI & HDMI Capable",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 89.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Asus",
         "Ports": "HDMI, VGA, DVI",
-        "Size": 24
+        "Size": 24,
+        "__class__": "Monitor"
     },
     "PSU.AV986CVS": {
-        "__class__":"PSU",
-        "SKU":"AV986CVS",
+        "SKU": "AV986CVS",
         "ProductName": "EVGA Full Modular 750w Power Supply",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 99.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "EVGA",
-        "PowerAmount": 750
+        "PowerAmount": 750,
+        "__class__": "PSU"
     },
     "PSU.AV522HEL": {
-        "__class__":"PSU",
-        "SKU":"AV522HEL",
+        "SKU": "AV522HEL",
         "ProductName": "EVGA 600w Power Supply",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 79.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "EVGA",
-        "PowerAmount": 600
+        "PowerAmount": 600,
+        "__class__": "PSU"
     },
     "SSD.AV126UYR": {
-        "__class__":"SSD",
-        "SKU":"AV126UYR",
+        "SKU": "AV126UYR",
         "ProductName": "500GB Samsung 2.5\" SATA SSD",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 79.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Desktop",
-
         "Brand": "Samsung",
         "Connection": "SATA",
-        "Capacity": 500
+        "Capacity": 500,
+        "__class__": "SSD"
     },
     "SSD.AV364POI": {
-        "__class__":"SSD",
-        "SKU":"AV364POI",
+        "SKU": "AV364POI",
         "ProductName": "1TB Western Digital M.2 SSD",
         "ProductImage": "https://cdn-icons-png.flaticon.com/512/5/5088.png",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 99.95,
-        "Amount": 10,
+        "Amount": 1000,
         "Platform": "Laptop",
-        
         "Brand": "Western Digital",
-        "Connection" : "M.2",
-        "Capacity": 1000
+        "Connection": "M.2",
+        "Capacity": 1000,
+        "__class__": "SSD"
     },
     "User.e9036e3e-6697-4e92-b3d1-0b1ff26be805": {
-        "__class__":"User",
-        "id":"e9036e3e-6697-4e92-b3d1-0b1ff26be805",
+        "id": "e9036e3e-6697-4e92-b3d1-0b1ff26be805",
         "created_at": "2023-05-15T21:08:06.266803",
         "updated_at": "2023-05-15T21:08:06.266815",
         "Username": "Syssos",
         "Password": "plaintextftw",
         "Email": "totallymyemail@email.com",
-        "Cart": "903fc68a-e663-468c-9162-7dc570d9f613"
+        "Cart": "903fc68a-e663-468c-9162-7dc570d9f613",
+        "__class__": "User"
     },
     "User.f558fce6-e02c-4e6c-93c8-401f8204da59": {
-        "__class__":"User",
-        "id":"f558fce6-e02c-4e6c-93c8-401f8204da59",
+        "id": "f558fce6-e02c-4e6c-93c8-401f8204da59",
         "created_at": "2023-05-15T21:08:08.266803",
         "updated_at": "2023-05-15T21:08:08.266815",
         "Username": "TestAccount",
         "Password": "plaintextftw",
         "Email": "totallymyemail@email.com",
-        "Cart": ""
+        "Cart": "",
+        "__class__": "User"
     },
     "Cart.903fc68a-e663-468c-9162-7dc570d9f613": {
-        "__class__":"Cart",
-        "id":"903fc68a-e663-468c-9162-7dc570d9f613",
+        "id": "903fc68a-e663-468c-9162-7dc570d9f613",
         "created_at": "2023-05-15T21:08:08.266803",
         "updated_at": "2023-05-15T21:08:08.266815",
-        "User": "TestAccount",
-        "Items": ["AV522HEL", "AV126UYR"]
+        "User": "Syssos",
+        "Items": [
+            "AV011TQT"
+        ],
+        "__class__": "Cart"
     }
 }

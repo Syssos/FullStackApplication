@@ -56,13 +56,30 @@ class FileStorage:
         """
         self.reload()
 
+    def update(self, updatedObj):
+        """ Here for future use, This function does not commit changes.
+
+            Should commit any changes within __objects into file located 
+            at __file_path.
+        """
+        if updatedObj.__class__.__name__ == "User" or updatedObj.__class__.__name__ == "Cart":
+            self.__objects[f"{updatedObj.__class__.__name__}.{updatedObj.id}"] = updatedObj
+        elif updatedObj.__class__.__name__ != "User" and updatedObj.__class__.__name__ != "Cart":
+            self.__objects[f"{updatedObj.__class__.__name__}.{updatedObj.SKU}"] = updatedObj
+            
+
     def save(self):
         """ Here for future use, This function does not commit changes.
 
             Should commit any changes within __objects into file located 
             at __file_path.
         """
-        self.reload()
+        saveToFile = {}
+        for key, val in self.__objects.items():
+            saveToFile[key] = val.to_dict()
+            
+        with open(FileStorage.__file_path, "w", encoding="UTF8") as fd:
+            fd.write(json.dumps(saveToFile))
 
     def delete(self):
         """ Here for future use, This function does not commit changes.
@@ -108,7 +125,7 @@ class FileStorage:
         for key, val in self.__objects.items():
             if val.__class__ != "User" or val.__class__ != "Cart":
                 if val.SKU == sku:
-                    return val.to_dict()
+                    return val
         return {}
 
     def count(self, cls=None):

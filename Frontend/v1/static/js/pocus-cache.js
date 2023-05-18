@@ -3,17 +3,7 @@ const HOCUS_CACHE = 'hocus-pocus'; // cache name to use for site data
 const HOCUS_API = 'http://localhost:5000/api/v1/items'; // link holding response of data being cached
 const CART_API = 'http://localhost:5000/api/v1/cart'; // link holding response of data being cached
 
-isAuthenticated().then(status => {
-    if (status) {
-        getCart();
-        document.getElementById('signin-menu').style.display = "none";
-        document.getElementById('user-control-menu').style.display = "block";
-    } else {
-        document.getElementById('signin-menu').style.display = "block";
-        document.getElementById('user-control-menu').style.display = "none";
-    }
-});
-
+// Checks if caches is in window, if present loads cache
 if ('caches' in window){
     checkCache();
     // DeleteCache();
@@ -80,31 +70,6 @@ async function Search(form) {
     location.assign(`http://localhost:5001/browse?search=${inputValue}`)
 }
 
-async function SignIn(form) {
-    var user = form.usernameInput.value;
-    var pwd = form.passwordInput.value;
-    try {
-        const response = await fetch("http://localhost:5000/api/v1/autherize", {
-          method: "POST", // or 'PUT'
-          credentials: 'include',
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Credentials": true
-          },
-          body: JSON.stringify({"username": user, "password": pwd}),
-        });
-    
-        const result = await response.json();
-        if (result.login == "failure") {
-            console.log("error occured, update alerts here")
-        } else if (result.login == "success") {
-            // location.assign("http://localhost:5001")
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-
 /**
 * Searches for "querystr" within cached data
 * @param {string} querystr - The string being searched for
@@ -146,33 +111,4 @@ async function collectCartData() {
         })
     }
     newCache.add(new Request(CART_API, options));
-}
-
-function getCart() {
-    var data = fetch("http://localhost:5000/api/v1/cart", {
-        method: "GET", 
-        credentials: 'include',
-        headers: {
-            "Access-Control-Allow-Credentials": true
-          },
-    }).then(x => {return x.text()});
-    data.then(content => {
-        console.log(content);
-    })
-}
-
-function isAuthenticated() {
-    // return bool
-    return fetch("http://localhost:5000/api/v1/isauth", {
-        method: "GET", 
-        credentials: 'include',
-        headers: {
-            "Access-Control-Allow-Credentials": true
-          },
-    }).then(x => {
-        if (x.status == 200) {
-            return true
-        }
-        return false
-    });
 }

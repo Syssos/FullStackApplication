@@ -237,3 +237,22 @@
 .user-control-menu, .signin-menu {
     display: none;
 }
+
+/* Cart Menu */
+.cart-item-container {
+    width: 100%;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart-item {
+    width: 100%;
+    height: 50px;
+    border-bottom: #333 1px solid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -32,33 +32,3 @@ if ('caches' in window){
         })
     })
 }
-
-/**
-* Builds the breadcrumb path for item being displayed
-* @param {object} data - Object data used to build breadcrumb trail
-*/
-async function setBreadcrumbPaths(data){
-    var cat = document.getElementById("category")
-    cat.innerHTML = pretifyThis[data.Platform];
-    cat.href= `browse?platform=${data.Platform}`;
-    
-    var sub = document.getElementById("subcategory")
-    sub.innerHTML = pretifyThis[data.__class__];
-    sub.href= `browse?sub=${data.__class__}`;
-
-    document.getElementById("category-list").innerHTML += `<li class="breadcrumb-item active" aria-current="page" id="PRODUCT">${data.ProductName}</li>`;
-}
-
-/**
-* creates a formated HTML string used to display the item on the page
-* @param {object} data - Object holding data to be displayed, expected to a standard product object
-* @return {string} - a string of HTML formated with product information
-*/
-function createElementView(data) {
-    return `<div class="item-image"><img src="${data.ProductImage}" width="60%" height="100%" /></div>
-            <div class="item-title">${data.ProductName}</div>
-            <div class="item-description">${data.ProductDescription}</div>
-            <div class="item-details" id="item-details">
-                <div class="item-detials-price">$${data.Price}</div></br>
-            </div>`
-}

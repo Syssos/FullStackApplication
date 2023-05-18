@@ -13,14 +13,14 @@
         <!-- Start of Login Canvas -->
         <div class="offcanvas" tabindex="-1" id="offcanvasLogin" aria-labelledby="offcanvasLoginLabel">
           <div class="login-canvas" id="login-canvas">  
-            <form class="login-menu-container">
+            <form class="login-menu-container" id="login-form" action ="">
               <div class="login-username">
                 <label for="usernameInput" class="form-label pocus-form-title">Username</label>
-                <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username" id="usernameInput">
+                <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username" id="usernameInput" onkeydown="return event.key != 'Enter';" autocomplete="username">
               </div>
               <div class="login-password">
                 <label for="passwordInput" class="form-label pocus-form-title">Password</label>
-                <input class="form-control me-2" type="password" id="passwordInput" aria-label="Password" placeholder="Password">
+                <input class="form-control current-password" type="password" id="passwordInput" aria-label="Password" placeholder="Password" onkeydown="return event.key != 'Enter';" autocomplete="current-password">
               </div>
               <div class="login-submit">
                 <button type="submit" class="btn btn-outline-light">Sign In</button>
@@ -94,7 +94,7 @@
         <!-- End of Navbar -->
 
         <!-- Start of Offcanvas Cart menu -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="pocusCart" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Cart</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -103,14 +103,18 @@
             <div>
               View, Modify, or Remove shopping cart items
             </div>
+            <div class="cart-item-container" id="cart-item-container">
+              <div class="cart-item">temp</div>
+              <div class="cart-item">temp</div>
+            </div>
             <div class="dropdown mt-3">
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
+                Options
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Remove all items</a></li>
+                <li><a class="dropdown-item" href="#">Preview Items</a></li>
+                <li><a class="dropdown-item" href="#">Apply Coupon</a></li>
               </ul>
             </div>
           </div>

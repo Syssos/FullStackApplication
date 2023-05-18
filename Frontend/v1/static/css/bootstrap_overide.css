@@ -126,3 +126,7 @@
 .nav-link:hover {
     color: #f4f4f4;
 }
+
+.offcanvas {
+    --bs-offcanvas-width: 600px;
+}
