@@ -1,0 +1,12 @@
+1. HASH THE PASSWORDS, this is going to be the first thing highlighted, as its super important to store passwords in a db hashed 
+   (v1 is a "mock" or "model" to show proof of concepts, security is not nessisarily important in that version)
+2. Refine dataset being used by project, prep for db storage, start breaking down what kind of 
+   relationships will be needed for each class attribute being stored.
+3. Copy Filestorage class and create a class that does the same things just with a database.
+4. Utilize dbstorage over file storage everywhere through out the app.
+5. Build out console.py to interact with dbstorage and file storage so data can be pulled from 
+   file and stored in db, then viewed(this console will not be packaged with code that gets 
+   deployed its more or less a tool for testing with more efficiency).
+6. Refine security practices with cookies, tokens, and sessions if need be, ensure all routes are 
+   locked down (maybe nmap could give us route insight on things we miss).
+7. Create unit tests, configure CI

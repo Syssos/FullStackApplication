@@ -1,0 +1,6 @@
+1. Rebuild front end in React. The Grommet library for React would be a nice little touch for styling, maybe combining with some bootstrap to bring a more professional presentation.
+2. Focus on security around the token storage, maybe do more research on how safe local storage is, is it worth using to store tokens? Also focus on when to cache data or fetch it, 
+   as well as managing how long data stays cached better, utilize states to prevent mutliple api calls like what happens in v1.
+3. Utilize React Router to handle different views needed such as viewing a single item, a list of items, or the homepage.
+4. Orginze current js into correct components, then utilize properties to pass important data around application to prevent the use of the URL params. However it is important to have some method
+   of pulling up a specific item, so maybe the view page will need to be special to accaount for a SKU number.

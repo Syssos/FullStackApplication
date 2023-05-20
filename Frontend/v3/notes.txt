@@ -1,0 +1,8 @@
+1. Bring TypeScript into the project.
+2. Start utilizing additional tools such as Hotjar to monitor site traffic
+3. Start focusing on SEO best practices, getting media on CDN's, and Ensure site data is loading without major time costing hicups
+
+
+4. Version 3 will need to handle everything covered in version 1 and 2 with the idea of speed and scalability in mind. Typescript helps 
+   keep code organized as the project builds, React is universal and can be deployed an a wide range of platforms, CDN's speed up load times
+   for media, and the tools that get utilized for SEO and Site traffic help the developers see where they need to focus their attention.

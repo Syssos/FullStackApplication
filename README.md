@@ -1,4 +1,4 @@
-# Containerized Full Stack Application
+# Full Stack Application
 This project will be targeted towards identifing and strengthening skills required by full stack software engineers. The functionality of the app will relate to online stores, and data manipulation.
 
 ## Key Project Concepts

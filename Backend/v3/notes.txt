@@ -1,0 +1,11 @@
+1. It Go (lang) time baby! Rebuild the current backend in go, replacing sqlalchemy with GORM, utilize the same db, and get some of that sweet sweet concurrency into play.
+2. Strong focus around how and when to take "concurrent" approaches, just because go makes it crazy easy doesnt mean it needs to be used for everything.
+3. Once the project has been converted into go, start playing around with creating extremly fast methods of searching for data throughout the application 
+   (maybe for funzies make socket connetion with js frontend to stream "search input" data making the search even faster?, or maybe make go routines with different time 
+   complexities, think O(n)) (https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly)
+
+
+4. Version 3 will need to handle everything covered in version 1 and 2 with the idea of speed and scalability in mind. Golang can be compiled for every major platform making
+   it a fast and universal option. Almost everything needing to be done can be handled by the Go standard libraries making the applications light weight. With go, by default  
+   go routines are used to handle requests, bringing physical resource needs down, and bringing up the speed every request is handled in. All these benifits and more make go a
+   great choice for this API.
