@@ -47,15 +47,6 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
-    def close(self):
-        """ Here for future use, This function does not commit changes.
-
-            Should commit any changes within __objects into file located 
-            at __file_path and close fd, check to see if fd can be closed 
-            later, simular to defer statement in Go?
-        """
-        self.reload()
-
     def update(self, updatedObj):
         """ Here for future use, This function does not commit changes.
 
@@ -77,9 +68,12 @@ class FileStorage:
         saveToFile = {}
         for key, val in self.__objects.items():
             saveToFile[key] = val.to_dict()
-            
-        with open(FileStorage.__file_path, "w", encoding="UTF8") as fd:
-            fd.write(json.dumps(saveToFile))
+        
+        try:
+            with open(FileStorage.__file_path, "w", encoding="UTF8") as fd:
+                fd.write(json.dumps(saveToFile))
+        except FileNotFoundError:
+            pass
 
     def delete(self):
         """ Here for future use, This function does not commit changes.

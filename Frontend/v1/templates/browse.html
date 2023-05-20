@@ -78,13 +78,21 @@
                   <!-- Displayed if user session is found -->
                   <div class="dropdown text-end user-control-menu" id="user-control-menu">
                     <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="position-absolute top-0 start-55 translate-middle p-2 bg-danger border border-light rounded-circle visually-hidden" id="account-notification">
+                        <span class="visually-hidden">New alerts</span>
+                      </span>
                       <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end text-small">
-                      <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#pocusCart" role="button">Cart</a></li>
+                      <li>
+                        <a class="dropdown-item" data-bs-toggle="offcanvas" href="#pocusCart" role="button">Cart</a>
+                        <span class="position-absolute top-0 start-55 translate-middle p-2 bg-danger border border-light rounded-circle visually-hidden" id="cart-notification">
+                          <span class="visually-hidden">New alerts</span>
+                        </span>
+                      </li>
                       <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#settingsMenu" role="button">Settings</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                      <li><a class="dropdown-item" onclick="logout()">Sign out</a></li>
                     </ul>
                   </div>
               </div>

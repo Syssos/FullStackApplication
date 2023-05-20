@@ -256,3 +256,13 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.remove-from-cart {
+    font-weight: 500;
+    padding-left: .25rem;
+}
+
+.remove-from-cart:hover {
+    font-weight: 700;
+    cursor: pointer;
+}

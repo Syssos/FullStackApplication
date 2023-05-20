@@ -38,7 +38,7 @@ class BaseModel:
     # Attribute deffinition is required for future database use, check this backends README.md for more details
     SKU = Column(String(60), nullable=False, primary_key=True)
     ProductName = Column(String(60))
-    ProductImage = Column(String(160))
+    ProductImage = Column(String(520))
     ProductDescription = Column(String(250))
     Price = Column(Integer())
     Amount = Column(Integer())

@@ -11,7 +11,11 @@ myOffcanvas.addEventListener('show.bs.offcanvas', function () {
     document.getElementById('login-canvas').style.opacity=1;
 })
 
-
+var myCartOffcanvas = document.getElementById('pocusCart')
+myCartOffcanvas.addEventListener('show.bs.offcanvas', function () {
+    document.getElementById('account-notification').classList.add("visually-hidden");
+    document.getElementById('cart-notification').classList.add("visually-hidden");
+})
 /**
 * checks if user is athenticated, then sets controls in header, and retreives cart items
 */
@@ -112,7 +116,7 @@ async function setBreadcrumbPaths(data){
 * @return {string} - a string of HTML formated with product information
 */
 function createElementView(data) {
-    var status = `<div class="add-to-cart-btn" onclick=addToCart("${data.SKU}")>add to cart</div>`;
+    var status = `<div class="add-to-cart-btn btn btn-outline-secondary" onclick=addToCart("${data.SKU}")>add to cart</div>`;
     if (data.Amount == 0) {
         status = "Out of Stock"
     }
@@ -152,8 +156,10 @@ async function addToCart(sku_id) {
             "Access-Control-Allow-Credentials": true
           },
           body: JSON.stringify({item: sku_id})
-    }).then(x => {return x.json()});
+    }).then(x => {return x.json()});    
     
+    document.getElementById('account-notification').classList.remove("visually-hidden");
+    document.getElementById('cart-notification').classList.remove("visually-hidden");
     setCart(data)
 }
 

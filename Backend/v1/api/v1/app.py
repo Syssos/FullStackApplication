@@ -40,10 +40,9 @@ def load_user(user_id):
 
 @app.teardown_appcontext
 def teardown(self):
-    """ calls close to close session
+    """ calls save to commit changes making session safe to close
     """
-    # Close reloads for know, function needs to be changed to commit changes to file storage
-    storage.close()
+    storage.save()
 
 @app.errorhandler(404)
 def errorhandler(error):
