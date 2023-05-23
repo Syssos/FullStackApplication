@@ -36,10 +36,12 @@ class User(UserMixin, UserBase, Base):
         Username = Column(String(60))
         Password = Column(String(160))
         Email = Column(String(160))
+        ProfilePicture = Column(String(250))
     else:
         Username = ""
         Password = ""
         Email = ""
+        ProfilePicture = ""
 
     def get(self, user_id):
         """ returns user class instance based on id, utilized in login managers user_loader function

@@ -303,7 +303,7 @@
         "ProductImage": "https://m.media-amazon.com/images/I/714DOCGvgeL._AC_SX679_.jpg",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 49.95,
-        "Amount": 1000,
+        "Amount": 999,
         "Platform": "Desktop",
         "Brand": "Coolermaster",
         "Model": "400",
@@ -516,7 +516,7 @@
         "ProductImage": "https://m.media-amazon.com/images/I/61aZgZmpHaL._AC_SX569_.jpg",
         "ProductDescription": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "Price": 645.95,
-        "Amount": 999,
+        "Amount": 1000,
         "Platform": "Desktop",
         "Brand": "MSI",
         "Model": "2080 Ti",
@@ -708,6 +708,7 @@
         "Password": "plaintextftw",
         "Email": "totallymyemail@email.com",
         "Cart": "903fc68a-e663-468c-9162-7dc570d9f613",
+        "ProfilePicture": "https://github.com/mdo.png",
         "__class__": "User"
     },
     "User.f558fce6-e02c-4e6c-93c8-401f8204da59": {
@@ -716,8 +717,9 @@
         "updated_at": "2023-05-15T21:08:08.266815",
         "Username": "TestAccount",
         "Password": "plaintextftw",
-        "Email": "totallymyemail@email.com",
+        "Email": "totallymyemail2@email.com",
         "Cart": "",
+        "ProfilePicture": "https://github.com/mdo.png",
         "__class__": "User"
     },
     "Cart.903fc68a-e663-468c-9162-7dc570d9f613": {
@@ -726,7 +728,7 @@
         "updated_at": "2023-05-15T21:08:08.266815",
         "User": "Syssos",
         "Items": [
-            "AV092QNY"
+            "AV826LUB"
         ],
         "__class__": "Cart"
     }

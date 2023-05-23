@@ -1,0 +1,4 @@
+Remaining:
+- Add to cart should not be present when not signed-in (or disabled with some kind of sign in alert)
+- Settings for user account details, Such as email, password, and a profile picture
+- Fix listings images and the images in the view page to be presented a little better.

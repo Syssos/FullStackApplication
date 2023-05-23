@@ -31,3 +31,4 @@ from api.v1.views.ssd import *
 # Routes require valid session
 from api.v1.views.authenticated.auth import *
 from api.v1.views.authenticated.cart import *
+from api.v1.views.authenticated.settings import *

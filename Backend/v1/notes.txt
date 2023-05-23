@@ -1,0 +1,3 @@
+Remaining
+- Setting routes for user account details, Such as email, password, and a profile picture
+- Ensure comments are all present and correct for new additional files
