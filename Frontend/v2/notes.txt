@@ -4,3 +4,12 @@
 3. Utilize React Router to handle different views needed such as viewing a single item, a list of items, or the homepage.
 4. Orginze current js into correct components, then utilize properties to pass important data around application to prevent the use of the URL params. However it is important to have some method
    of pulling up a specific item, so maybe the view page will need to be special to accaount for a SKU number.
+
+V1 Issues to address
+   - Multiple endpoint requests
+   - "Tracking data" between pages, mainly account and cart data being the issue
+   - Better means of checking authentication
+
+   - Create a gitbook entry covering the v2 frontend:
+    Goal: Discuss the rebuild the front end with react, html, css, scss, bootstrap, and nginx. Once these changes are discussed maybe breakdown how v1 could have used react with
+    the correct planning

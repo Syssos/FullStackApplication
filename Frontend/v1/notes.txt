@@ -2,3 +2,8 @@ Remaining:
 - Add to cart should not be present when not signed-in (or disabled with some kind of sign in alert)
 - Settings for user account details, Such as email, password, and a profile picture
 - Fix listings images and the images in the view page to be presented a little better.
+
+
+- Create a gitbook entry covering the v1 frontend:
+    Goal: Desribe how the front end can be built using basic javascript, and how to identify important needs, v1 is intended to also highlight some issues with this approach
+    to better show how the changes we make are benificial

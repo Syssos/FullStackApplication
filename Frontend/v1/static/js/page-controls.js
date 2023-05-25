@@ -22,6 +22,7 @@ myCartOffcanvas.addEventListener('show.bs.offcanvas', function () {
 isAuthenticated().then(status => {
     if (status) {
         fetchCart();
+        setProfilePicture();
         document.getElementById('signin-menu').style.display = "none";
         document.getElementById('user-control-menu').style.display = "block";
     } else {
@@ -116,16 +117,25 @@ async function setBreadcrumbPaths(data){
 * @return {string} - a string of HTML formated with product information
 */
 function createElementView(data) {
-    var status = `<div class="add-to-cart-btn btn btn-outline-secondary" onclick=addToCart("${data.SKU}")>add to cart</div>`;
+    var status = "";
+    
     if (data.Amount == 0) {
         status = "Out of Stock"
     }
-    // console.log(data.Amount)
+
+    isAuthenticated().then(status => {
+        if (status) {
+            document.getElementById("item-price").innerHTML += `<div class="add-to-cart-btn btn btn-outline-secondary" onclick=addToCart("${data.SKU}")>add to cart</div>`
+        } else {
+            document.getElementById("item-price").innerHTML += `<div class="add-to-cart-btn btn btn-outline-secondary disabled" onclick=addToCart("${data.SKU}")>add to cart</div>`;
+        }
+    });
+    
     return `<div class="item-image"><img src="${data.ProductImage}" width="60%" height="100%" /></div>
             <div class="item-title">${data.ProductName}</div>
             <div class="item-description">${data.ProductDescription}</div>
             <div class="item-details" id="item-details">
-                <div class="item-detials-price">$${data.Price} - ${status}</div></br>
+                <div class="item-detials-price" id="item-price">$${data.Price} - ${status}</div></br>
             </div>`
 }
 
@@ -169,7 +179,7 @@ async function setCart(data) {
             var container = document.getElementById('cart-item-container')
             container.innerHTML = ""
             for (const cartItem of cartData.Items) {
-                var ele = `<div class="cart-item"><a href="http://localhost:5001/view?item=${cartItem.SKU}">${cartItem.ProductName}</a> - $${cartItem.Price} - <div class="remove-from-cart" onclick=removeFromCart("${cartItem.SKU}")>Remove</div></div>`
+                var ele = `<div class="cart-item"><a href="http://localhost:5001/view?item=${cartItem.SKU}">${cartItem.ProductName}</a>  - $${cartItem.Price} - <div class="remove-from-cart" onclick=removeFromCart("${cartItem.SKU}")>Remove</div></div>`
                 container.innerHTML += ele;
             }
         }
@@ -252,5 +262,18 @@ async function logout() {
     }).then(x => {return x.json()});
     data.then(logoutcode => {
         location.assign("http://localhost:5001")
+    })
+}
+
+async function setProfilePicture() {
+    var data = fetch("http://localhost:5000/api/v1/settings/view", {
+        method: "GET", 
+        credentials: 'include',
+        headers: {
+            "Access-Control-Allow-Credentials": true
+          },
+    }).then(x => {return x.json()});
+    data.then(userData => {
+        document.getElementById('profile-picture').src = userData.ProfilePicture
     })
 }

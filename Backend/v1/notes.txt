@@ -1,3 +1,17 @@
 Remaining
 - Setting routes for user account details, Such as email, password, and a profile picture
 - Ensure comments are all present and correct for new additional files
+- Highlight core features in readme, refering to gitbook for more details, ensure frontend and backend can be deployed via flask, on localhost easily.
+
+- Create gitbook entry for the v1 backend noting each feature below:
+    Goal: Describe all the basic features, passing data around, how it moves from front end to backend, how its displayed etc. The user should be fully aware on how a piece of data goes
+    from the file on the backend server to being displayed how it is on the front end. This will be important for understand changes between v1 and v2
+    
+    - Brief notes on why some sqlalchemy components are present (to showcase they datatypes of each)
+    - The OOP approach, why its utilized in the project
+    - Inheritance between objects (BaseModel, UserModel) and why they differ, maybe go into how the structure will change as the DB is introduced.
+    - How filestorage and the engine is utilized
+    - How routes are structured, accessing them, blueprints and the likes.
+    - Cookies, Sessions, Flask Login
+    - CORS, why its here for testing, what its for (basic rundown, they just need to understand its to prevent cors issues while testing, and sense its needed its better to have it configured early then try to add it later.)
+    

@@ -10,3 +10,17 @@
 6. Refine security practices with cookies, tokens, and sessions if need be, ensure all routes are 
    locked down (maybe nmap could give us route insight on things we miss).
 7. Create unit tests, configure CI
+
+
+V1 Issues to address:
+- Routing, using proper methods, routes, and idealogy to access data, ie /settings will utilize 'GET', 'PUT', and 'DELETE' or the children routes such as '/settings/view', '/settings/modify', etc...
+- Password Hashing, using and securing databases for data storage(including best practices like env variables, etc), and ensuring raw input is always parsed, and taking a further step into session securtiy, utilizing best practices and what each thing is doing thats important.
+
+- Create a gitbook entry for the v2 backend noting each feature below:
+   Goal: Should cover more advanced topics, why the changes are happing and the benifit from the change between v1 and v2.
+
+    - What the proper methods for routes are, how we make the change to account for it, and why its important
+    - How to properlly store passwords in a database, some common methods, and best practices for hashing
+    - Further dive into sessions, authentication, and cookies, what changes where made to improve performance/security and why these features are important and some things to watch for.
+    - Why using a database is important, How scalability is affected, how to ustilize the database while ensureing it remains secure.
+    - 
