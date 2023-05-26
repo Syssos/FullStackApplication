@@ -115,6 +115,7 @@ class FileStorage:
 
     def getBySKU(self, sku):
         """ Returns an object with specified SKU number, ignores classes that do not utilize a SKU
+            TODO Remove and replace with get, as these to functions essentially do the same thing, but get() is more efficient.
         """
         for key, val in self.__objects.items():
             if val.__class__ != "User" or val.__class__ != "Cart":

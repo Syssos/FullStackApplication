@@ -14,7 +14,7 @@ if ('caches' in window){
                         if (thing.SKU == PRODUCT) {                            
                             setBreadcrumbPaths(thing);
 
-                            const element = createElementView(thing);                            
+                            const element = createElementView(thing);
                             document.getElementById('item-container').innerHTML = element;
                             
                             for (const property in thing) {

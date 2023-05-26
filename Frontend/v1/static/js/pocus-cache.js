@@ -1,7 +1,5 @@
-const HOCUS_CART = 'hocus-cart'; // cache name for cart object
 const HOCUS_CACHE = 'hocus-pocus'; // cache name to use for site data
 const HOCUS_API = 'http://localhost:5000/api/v1/items'; // link holding response of data being cached
-const CART_API = 'http://localhost:5000/api/v1/cart'; // link holding response of data being cached
 
 // Checks if caches is in window, if present loads cache
 if ('caches' in window){
@@ -62,15 +60,6 @@ async function DeleteCache() {
 }
 
 /**
-* Used for redirecting traffic based on input from the search form
-* @param {object} form - The HTML form element that calls the function
-*/
-async function Search(form) {
-    var inputValue = form.inputBox.value;
-    location.assign(`http://localhost:5001/browse?search=${inputValue}`)
-}
-
-/**
 * Searches for "querystr" within cached data
 * @param {string} querystr - The string being searched for
 * @return {array} - an array of product items, each item containing some kind an instance of querystr
@@ -100,15 +89,10 @@ async function searchCache(querystr) {
 }
 
 /**
-* Fetchs cart data and caches it, requires authetication cookie
+* Used for redirecting traffic based on input from the search form
+* @param {object} form - The HTML form element that calls the function
 */
-async function collectCartData() {
-    const newCache = await caches.open(HOCUS_CART);
-    const options = {
-        method: "GET",
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        })
-    }
-    newCache.add(new Request(CART_API, options));
+async function Search(form) {
+    var inputValue = form.inputBox.value;
+    location.assign(`http://localhost:5001/browse?search=${inputValue}`)
 }
