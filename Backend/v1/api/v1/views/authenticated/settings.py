@@ -38,32 +38,32 @@ def return_modify_settings():
 
     if "username" in content:
         if content["username"] != current_user.Username and content["username"] != "":
-            for key, usr in allUsers.items():
-                check = usr.to_dict()
-                if check["Username"] == content["username"]:
-                    return (jsonify({"status": "Username Exists Error"}))
-
             cart = models.storage.get("Cart", current_user.Cart)
             cart.User = content["username"]
             user.Username = content["username"]
 
             models.storage.update(user)
             models.storage.update(cart)
+        else:
+            # Username is the same, or unchanged
+            pass
 
     if "profilepicture" in content:
+        print(content["profilepicture"])
         if content["profilepicture"] != current_user.ProfilePicture and content["profilepicture"] != "":
             user.ProfilePicture = content["profilepicture"]            
             models.storage.update(user)
+        else:
+            # Profile Picture is the same, or unchanged
+            pass
 
     if "email" in content:
         if content["email"] != current_user.Email and content["email"] != "":
-            for key, usr in allUsers.items():
-                check = usr.to_dict()
-                if check["Email"] == content["email"]:
-                    return (jsonify({"status": "Email in use"}))
-
             user.Email = content["email"]
             models.storage.update(user)
+        else:
+            # Email is the same, or unchanged
+            pass
 
     models.storage.save()
     return jsonify({"status": "OK"})

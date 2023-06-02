@@ -2,6 +2,10 @@
 var loginForm = document.getElementById("login-form");
 loginForm.addEventListener("submit", SignIn)
 
+// // canvas control for settings menu needed on all pages
+var settingsForm = document.getElementById("settings-form");
+settingsForm.addEventListener("submit", setSettings)
+
 var myOffcanvas = document.getElementById('offcanvasLogin')
 myOffcanvas.addEventListener('hide.bs.offcanvas', function () {
     document.getElementById('login-canvas').style.opacity=0;
@@ -275,5 +279,42 @@ async function setProfilePicture() {
     }).then(x => {return x.json()});
     data.then(userData => {
         document.getElementById('profile-picture').src = userData.ProfilePicture
+        setSettingsData(userData);
     })
+}
+
+async function setSettingsData(data) {
+    document.getElementById("accountnameInput").placeholder = data.Username;
+    document.getElementById("emailInput").placeholder = data.Email;
+    document.getElementById("pictureInput").placeholder = data.ProfilePicture;
+}
+
+async function setSettings(e) {
+    // var user = form.usernameInput.value;
+    // var pwd = form.passwordInput.value;
+    e.preventDefault();
+    let username = document.getElementById("accountnameInput");
+    let email = document.getElementById("emailInput");
+    let profilePic = document.getElementById("pictureInput");
+
+    try {
+        const response = await fetch("http://localhost:5000/api/v1/settings/modify", {
+          method: "POST", // or 'PUT'
+          credentials: 'include',
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true
+          },
+          body: JSON.stringify({ "username": username.value, "email": email.value, "profilepicture": profilePic.value }),
+        });
+    
+        const result = await response.json();
+        if (result.status == "error") {
+            console.log("error occured:", result.error)
+        } else if (result.status == "OK") {
+            location.assign("http://localhost:5001")
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }

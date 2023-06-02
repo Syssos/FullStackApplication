@@ -135,18 +135,25 @@
         </div>
         <div class="offcanvas-body">
           <div>
-            View, Modify, or Remove shopping cart items
+            View, or Modify, current account settings.
           </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+          <form class="settings-menu-container" id="settings-form" action ="">
+            <div class="settings-username">
+              <label for="accountnameInput" class="form-label pocus-form-title">Username</label>
+              <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username" id="accountnameInput" onkeydown="return event.key != 'Enter';" autocomplete="username">
+            </div>
+            <div class="settings-Email" id="email-settings">
+              <label for="emailInput" class="form-label pocus-form-title">Email</label>
+              <input class="form-control me-2" type="text" placeholder="Email" aria-label="Email" id="emailInput" onkeydown="return event.key != 'Enter';" autocomplete="email">
+            </div>
+            <div class="settings-profile-pic">
+              <label for="pictureInput" class="form-label pocus-form-title">Profile Picture</label>
+              <input class="form-control me-2" type="text" placeholder="Profile Picture" aria-label="profile-picture" id="pictureInput" onkeydown="return event.key != 'Enter';" autocomplete="profile picture link">
+            </div>
+            <div class="settings-submit">
+              <button type="submit" class="btn btn-outline-light">Change Settings</button>
+            </div>
+          </form>
         </div>
       </div>
       <!-- End of Offcanvas settings menu -->
